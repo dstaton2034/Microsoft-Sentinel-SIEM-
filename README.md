@@ -1,8 +1,8 @@
-<h1>Active Directory Home Lab</h1>
+<h1>Microsoft Sentinel (SIEM)</h1>
 
  
 <h2>Description</h2>
-In this project, a simulated Active Directory environment was created using Oracle Virtual Box. The goal was to deepen my understanding of Active Directory and Windows networking by configuring and running this lab. The hands-on experience provided a comprehensive understanding of the workings of Active Directory and the various components involved in a real-world scenario.
+Discover the power of Microsoft Sentinel with this step-by-step guide showcasing my work. I successfully set up Microsoft Sentinel as a Security Information and Event Management (SIEM) system and connected it to a live virtual machine that acted as a honeypot. Real-time attacks, including RDP Brute Force, were observed from various parts of the world. A custom PowerShell script was utilized to identify the attacker's geolocation information and I was able to visualize it on the Azure Sentinel map through detailed screenshots
 <br />
 
 
@@ -12,38 +12,64 @@ In this project, a simulated Active Directory environment was created using Orac
 
 <h2>Environments Used </h2>
 
-- <b>Windows 10</b> (21H2)
-- <b>Server 2019</b>
+- <b>Microsoft Sentinel</b>
 
-<h2>Program walk-through:</h2>
+<h2>Project walk-through:</h2>
 
 <p align="center">
-The infrustructrure of the network I'm going to set up: <br/>
-<img src="https://imgur.com/22zNKVm" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Setting up a VM in Azure: <br/>
+<img src="https://i.imgur.com/bHQOsdB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Select the disk:  <br/>
-<img src="https://i.imgur.com/tcTyMUE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Created my firewall rules to accept all traffic:  <br/>
+<img src="https://i.imgur.com/qSiAhXA.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Enter the number of passes: <br/>
-<img src="https://i.imgur.com/nCIbXbg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Created a Log Analytics workspace: <br/>
+<img src="https://i.imgur.com/8OYYfcI.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Confirm your selection:  <br/>
-<img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+ Connected Log Analytics to my VM (NO PICTURE)
+ <br />
+ <br />
+Setting up Sentinel, connecting my VM I previously made to it:  <br/>
+<img src="https://i.imgur.com/hdGiEbI.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Wait for process to complete (may take some time):  <br/>
-<img src="https://i.imgur.com/JL945Ga.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Connected to my VM through Remote Desktop:  <br/>
+<img src="https://i.imgur.com/ZMp9VmB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Sanitization complete:  <br/>
-<img src="https://i.imgur.com/K71yaM2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Pinging my vm to make sure traffic can come through:  <br/>
+<img src="https://i.imgur.com/GkZRWJX.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Observe the wiped disk:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Running a Powershell Strip (It just basically gets all the EventLog-SecurityLog grabs all the events of all the failed logins and creates a new logfile):  <br/>
+<img src="https://i.imgur.com/7xotPhX.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+ <br />
+<br />
+Log that was created after running the strip:  <br/>
+<img src="https://i.imgur.com/bWbro4o.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+Creating a logfile to train log analytics what to look for in the logfile:  <br/>
+<img src="https://i.imgur.com/O10T49w.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+Making sure my logs came through successfully:  <br/>
+<img src="https://i.imgur.com/1scymYy.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+Setting Up World MAP:  <br/>
+<img src="https://i.imgur.com/rldHc8K.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+Checking my powershell strip, noticed that people have discovered my VM and are trying to brute force
+<img src="https://i.imgur.com/nyNNVZr.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/RoodEet.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+ 
+ 
+ 
 </p>
 
 <!--
