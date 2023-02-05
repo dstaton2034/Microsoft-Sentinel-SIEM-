@@ -18,7 +18,7 @@ Discover the power of Microsoft Sentinel with this step-by-step guide showcasing
 
 <p align="center">
 Setting up a VM in Azure: <br/>
-<img src="https://i.imgur.com/bHQOsdB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/sQo0YgM.png[/img]" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 Created my firewall rules to accept all traffic:  <br/>
